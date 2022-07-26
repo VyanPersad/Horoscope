@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <!--<script type="text/javascript" src="jquery-3.6.0.min.js"></script>-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 input-group m-3 card shadow">
+                <div class="row d-flex justify-content-center">
+                    <input class="col-3 input-lg rounded-2 m-2 p-2" style="text-align: center;" placeholder="Enter Day"
+                        id="dayIn">
+                    <div class="col-4 d-flex justify-content-center">
+                        <select id="selections" class="btn btn-secondary m-2 p-2">
+                            <option class="text-light">Select Month</option>
+                            <option class="text-light">Jan</option>
+                            <option class="text-light">Feb</option>
+                            <option class="text-light">Mar</option>
+                            <option class="text-light">Apr</option>
+                            <option class="text-light">May</option>
+                            <option class="text-light">Jun</option>
+                            <option class="text-light">Jul</option>
+                            <option class="text-light">Aug</option>
+                            <option class="text-light">Sep</option>
+                            <option class="text-light">Oct</option>
+                            <option class="text-light">Nov</option>
+                            <option class="text-light">Dec</option>
+                        </select>
+                    </div>
+                    <input class="col-3 input-lg rounded-2 m-2 p-2" style="text-align: center;" placeholder="Enter Year"
+                        id="yearIn">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 input-group m-3 card shadow">
+                <p class="row d-flex justify-content-center">Select only one per option.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 m-3 input-group card shadow ">
+                <div class="row d-flex justify-content-center">
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" name="typeSel" onclick="typeSel(this.id)"
+                            id="career">
+                        <label class="form-check-label" for="career">Career</label>
+                    </div>
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="typeSel" onclick="typeSel(this.id)"
+                            id="love">
+                        <label class="form-check-label" for="love">Love</label>
+                    </div>
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="typeSel" onclick="typeSel(this.id)"
+                            id="normal">
+                        <label class="form-check-label" for="normal">Normal</label>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="periodSel" onclick="setPeriod(this.id)"
+                            id="daily">
+                        <label class="form-check-label" for="daily">Daily</label>
+                    </div>
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="periodSel" onclick="setPeriod(this.id)"
+                            id="week">
+                        <label class="form-check-label" for="week">Weekly</label>
+                    </div>
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="periodSel" onclick="setPeriod(this.id)"
+                            id="month">
+                        <label class="form-check-label" for="month">Monthly</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="dayRow">
+            <div class="col-lg-6 col-md-12 ms-3 input-group card shadow ">
+                <div class="row d-flex justify-content-center">
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="dateSel" onclick="setDay(this.id)"
+                            id="yest">
+                        <label class="form-check-label">Yesterday</label>
+                    </div>
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="dateSel" onclick="setDay(this.id)"
+                            id="tod">
+                        <label class="form-check-label">Today</label>
+                    </div>
+                    <div class="form-check col-3 ">
+                        <input class="form-check-input" type="checkbox" name="dateSel" onclick="setDay(this.id)"
+                            id="tom">
+                        <label class="form-check-label">Tomorrow</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="singleRow">
+            <div class="col-lg-6 col-md-12 ms-3 input-group card shadow ">
+                <div class="row d-flex justify-content-center">
+                    <div class="form-check col-2">
+                        <input class="form-check-input" type="checkbox" name="dateSel" onclick="setStatus(this.id)"
+                            id="single">
+                        <label class="form-check-label">Single</label>
+                    </div>
+                    <div class="form-check col-2">
+                        <input class="form-check-input" type="checkbox" name="dateSel" onclick="setStatus(this.id)"
+                            id="couple">
+                        <label class="form-check-label">Couple</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 input-group m-3 card shadow">
+                <div class="row d-flex justify-content-center">
+                    <input class="col-3 input-lg rounded-2 m-2 p-2" style="text-align: center;" placeholder="Birth Day"
+                        id="dateOut">
+                    <button class="col-3 btn btn-secondary m-2 p-2" type="button" onclick="setDate()" id="setDate">Set
+                        Date</button>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-5 m-1 card shadow card-header">
+                <p class="d-flex justify-content-center" id="horo1">Traditional</p>
+                <img id="img1" src="">
+            </div>
+            <div class="col-5 m-1 card shadow card-header">
+                <p class="d-flex justify-content-center" id="horo2">New</p>
+                <img id="img2" src="">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-5 m-1 card shadow card-header" id="horo3">
+                <p class="d-flex justify-content-center">Traditional</p>
+
+            </div>
+            <div class="col-5 m-1 card shadow card-header">
+                <p class="d-flex justify-content-center" id="horo4">New</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="Bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+</footer>
+
+</html>
