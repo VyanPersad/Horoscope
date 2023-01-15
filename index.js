@@ -1,7 +1,8 @@
 
 let hname1, hname2;
 let hDay, horoType, horoPeriod, hStat;
-let url = 'Inset your API here';
+//let url = 'https://astro-daily-live-horoscope.p.rapidapi.com/horoscope';
+//This API no longer works as the service seems to not be responding.
 let dayRow = document.getElementById("dayRow");
 var text3 = document.getElementById("horo3");
 var text4 = document.getElementById("horo4");
